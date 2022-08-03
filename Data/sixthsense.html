@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kelurahan Semper Timur</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+      table,
+      td {
+        border: 2px solid black;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script>
+  
+      function read_value(srchb='',srcht='') {
+                
+        var script_url = "https://script.google.com/macros/s/AKfycbyxNv-JG37C0psb20FhthHTG5gN7dWVqdGTKWBlMK0ZSY5n4SjSjek4x5yUfrhoUhJ-/exec";
+        
+
+          var url = script_url+"?action=read";
+      
+          $.getJSON(url, function (json) {
+       if (srchb!=''&&srcht!=''){
+      // buat tabel yang menampilkan data
+        var table = document.createElement("table");
+        table.setAttribute("id", "myTable");
+        var header = table.createTHead();
+        var row = header.insertRow(0);     
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        var cell5 = row.insertCell(4);
+        var cell6 = row.insertCell(5);
+        var cell7 = row.insertCell(6);
+        var cell8 = row.insertCell(7);
+        var cell9 = row.insertCell(8);
+        var cell10 = row.insertCell(9);;//////////////////
+       
+        cell1.innerHTML = "<b><div class='text-center pd-1'>No</div></b>";
+        cell2.innerHTML = "<b><div class='text-center pd-1'>Hari</div></b>";
+        cell3.innerHTML = "<b><div class='text-center pd-1'>Tanggal</div></b>";
+        cell4.innerHTML = "<b><div class='text-center pd-1'>Penanganan (Pekerjaan PPSU Tingkat Kelurahan)</div></b>";
+        cell5.innerHTML = "<b><div class='text-center pd-1'>Lokasi</div></b>";
+        cell6.innerHTML = "<b><div class='text-center pd-1'>Progres Pekerjaan</div></b>";
+        cell7.innerHTML = "<b><div class='text-center pd-1'>Kode</div></b>";
+        cell8.innerHTML = "<b><div class='text-center pd-1'>Sebelum</div></b>";
+        cell9.innerHTML = "<b><div class='text-center pd-1'>Proses</div></b>";
+        cell10.innerHTML = "<b><div class='text-center pd-1'>Sesudah</div></b>";//////////////////
+              
+      //        alert(json.records);
+           // masukkan data ke dalam tabel
+            if (srchb!=''&&srcht!=''){
+              for (var i = 0; i < json.records.length; i++) {
+                var tim = json.records[i].Tim.toUpperCase();
+                var timbersih = tim.replaceAll(" ","");
+                if(srchb==json.records[i].Bulan&&srcht==json.records[i].Tahun&&timbersih=='SIXTHSENSE'){
+          tr = table.insertRow(-1);
+          var tabCell = tr.insertCell(-1);
+          tabCell.innerHTML = "<div class='text-center pd-1'>"+(i+1)+"</div>";
+          tabCell = tr.insertCell(-1);
+          tabCell.innerHTML = "<div class='text-center pd-1'>"+json.records[i].Hari+"</div>";
+          tabCell = tr.insertCell(-1);
+          tabCell.innerHTML = "<div class='text-center pd-1'>"+json.records[i].Tanggal+" "+json.records[i].Bulan+" "+json.records[i].Tahun+"</div>";
+          tabCell = tr.insertCell(-1);
+          tabCell.innerHTML = "<div class='text-center pd-1'>"+json.records[i].Penanganan+"</div>";
+          tabCell = tr.insertCell(-1);
+          tabCell.innerHTML = "<div class='text-center pd-1'>"+json.records[i].Lokasi+"</div>";
+          tabCell = tr.insertCell(-1);
+          tabCell.innerHTML = "<div class='text-center pd-1'>"+json.records[i].Progres_Pekerjaan+"</div>";
+          tabCell = tr.insertCell(-1);
+          tabCell.innerHTML = "<div class='text-center pd-1'>"+json.records[i].Kode+"</div>";
+          tabCell = tr.insertCell(-1);
+          var dokumlama=json.records[i].Sebelum;
+          var dokumbaru=dokumlama.replaceAll("open?id=","uc?export=view&id=");
+          var dokumbaru1=dokumbaru.replaceAll(",","' width='150px'/><br><br><img src='")
+          tabCell.innerHTML = "<div class='text-center pd-1'><img src='"+dokumbaru1+"' width='150px'/></div>";
+          tabCell = tr.insertCell(-1);
+          var dokumlama=json.records[i].Proses;
+          var dokumbaru=dokumlama.replaceAll("open?id=","uc?export=view&id=");
+          var dokumbaru1=dokumbaru.replaceAll(",","' width='150px'/><br><br><img src='")
+          tabCell.innerHTML = "<div class='text-center pd-1'><img src='"+dokumbaru1+"' width='150px'/></div>";
+          tabCell = tr.insertCell(-1);
+          var dokumlama=json.records[i].Sesudah;
+          var dokumbaru=dokumlama.replaceAll("open?id=","uc?export=view&id=");
+          var dokumbaru1=dokumbaru.replaceAll(",","' width='150px'/><br><br><img src='")
+          tabCell.innerHTML = "<div class='text-center pd-1'><img src='"+dokumbaru1+"' width='150px'/></div>"; //////////////////
+              }
+            }
+            } 
+              
+              var divContainer = document.getElementById("showData");
+              divContainer.innerHTML = "";
+              divContainer.appendChild(table);
+            ///////////////////
+          }
+          });
+       }
+       function cetak(el){
+        var restorepage = document.body.innerHTML;
+        var printcontent = document.getElementById(el).innerHTML;
+        document.body.innerHTML=printcontent;
+        window.print();
+        document.body.innerHTML=restorepage;
+      }
+        </script>
+        </head>
+        <body id="home">
+      <nav
+      class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm fixed-top"
+    >
+      <div class="container">
+        <a class="navbar-brand fs-4"
+          ><img src="../img/logo.png" width="35" />&emsp;Kelurahan Semper
+          Timur</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page"
+                >Laporan Kegiatan</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html"
+                >Logout</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <section id="projects">
+      <div class="row">
+    <div style="padding-top: 5rem" class="fw-bolder fs-3 text-center pb-3">
+      LAPORAN PPSU
+    </div>
+
+    <div class="container px-4">
+        <div class="row">
+          <div class="col-md-5 mb-3">
+           <div class="p-2 border bg-light">
+            <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="srchb" id="srchbulan">
+              <option selected>Silahkan Pilih Bulan</option>
+              <option value="Januari">Januari</option>
+              <option value="Februari">Februari</option>
+              <option value="Maret">Maret</option>
+              <option value="April">April</option>
+              <option value="Mei">Mei</option>
+              <option value="Juni">Juni</option>
+              <option value="Juli">Juli</option>
+              <option value="Agustus">Agustus</option>
+              <option value="September">September</option>
+              <option value="Oktober">Oktober</option>
+              <option value="November">November</option>
+              <option value="Desember">Desember</option>
+            </select>
+           </div>
+          </div>
+          <div class="col-md-5 mb-3">
+            <div class="p-2 border bg-light">
+              <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="srcht" id="srchtahun">
+                <option selected>Silahkan Pilih Tahun</option>
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+                <option value="2025">2025</option>
+                <option value="2026">2026</option>
+                <option value="2027">2027</option>
+                <option value="2028">2028</option>
+                <option value="2029">2029</option>
+                <option value="2030">2030</option>
+                <option value="2031">2031</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-1 pt-2">
+            <div class="">
+                <input type="button" class="btn btn-success" onclick="read_value($('#srchbulan').val(),$('#srchtahun').val())" value="Tampilkan"/>
+            </div>
+          </div>
+          <div class="col-md-1 pt-2">
+            <input type="button" class="btn btn-success" onclick="cetak('showData')" value="Cetak"/>
+          </div>
+        </div>
+      </div>           
+    </div> 
+    <div id="showData" class="table fs-6" style="padding-top: 25pt;padding-bottom: 75pt;padding-left: 10pt;padding-right: 10pt;"></div>
+  </div>
+  </section>
+
+    <svg id="wave" style="transform:rotate(0deg); transition: 0.3s" viewBox="0 0 1440 100" version="1.1" xmlns="http://www.w3.org/2000/svg" class="fixed-bottom"><defs><linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0"><stop stop-color="rgba(13, 110, 253, 1)" offset="0%"></stop><stop stop-color="rgba(13, 110, 253, 1)" offset="100%"></stop></linearGradient></defs><path style="transform:translate(0, 0px); opacity:1" fill="url(#sw-gradient-0)" d="M0,10L30,11.7C60,13,120,17,180,18.3C240,20,300,20,360,26.7C420,33,480,47,540,51.7C600,57,660,53,720,51.7C780,50,840,50,900,41.7C960,33,1020,17,1080,18.3C1140,20,1200,40,1260,40C1320,40,1380,20,1440,21.7C1500,23,1560,47,1620,46.7C1680,47,1740,23,1800,16.7C1860,10,1920,20,1980,20C2040,20,2100,10,2160,10C2220,10,2280,20,2340,28.3C2400,37,2460,43,2520,51.7C2580,60,2640,70,2700,76.7C2760,83,2820,87,2880,88.3C2940,90,3000,90,3060,78.3C3120,67,3180,43,3240,31.7C3300,20,3360,20,3420,25C3480,30,3540,40,3600,41.7C3660,43,3720,37,3780,40C3840,43,3900,57,3960,53.3C4020,50,4080,30,4140,28.3C4200,27,4260,43,4290,51.7L4320,60L4320,100L4290,100C4260,100,4200,100,4140,100C4080,100,4020,100,3960,100C3900,100,3840,100,3780,100C3720,100,3660,100,3600,100C3540,100,3480,100,3420,100C3360,100,3300,100,3240,100C3180,100,3120,100,3060,100C3000,100,2940,100,2880,100C2820,100,2760,100,2700,100C2640,100,2580,100,2520,100C2460,100,2400,100,2340,100C2280,100,2220,100,2160,100C2100,100,2040,100,1980,100C1920,100,1860,100,1800,100C1740,100,1680,100,1620,100C1560,100,1500,100,1440,100C1380,100,1320,100,1260,100C1200,100,1140,100,1080,100C1020,100,960,100,900,100C840,100,780,100,720,100C660,100,600,100,540,100C480,100,420,100,360,100C300,100,240,100,180,100C120,100,60,100,30,100L0,100Z"></path></svg>
+      <footer class="text-white text-center fixed-bottom pb-1">
+        <p>&copy; 2022 Kelurahan Semper Timur</p>
+      </footer>
+      <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+    </body>
+  </html>
+  </body>
+</html>

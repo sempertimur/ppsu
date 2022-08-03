@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kelurahan Semper Timur</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"
+    />
+  </head>
+  <body id="home">
+    <!-- Navbar -->
+    <nav
+      class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm fixed-top"
+    >
+      <div class="container">
+        <a class="navbar-brand fs-4"
+          ><img src="img/logo.png" width="35" />&emsp;Kelurahan Semper Timur</a
+        >
+      </div>
+    </nav>
+    <!-- Akhir Navbar -->
+
+    <!-- Project -->
+    <section id="projects" style="padding-top: 9rem">
+      <div class="row justify-content-center">
+        <div class="col-sm-4">
+          <div class="card">
+            <div class="card-body">
+              <h2 class="card-title text-center mb-4">LOGIN</h2>
+              <form>
+                <div class="mb-3 row">
+                  <label for="staticEmail" class="col-md-5 col-form-label"
+                    >Username</label
+                  >
+                  <div class="col">
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="email"
+                      aria-describedby="emailHelp"
+                    />
+                  </div>
+                </div>
+                <div class="mb-3 row">
+                  <label for="inputPassword" class="col-md-5 col-form-label"
+                    >Password</label
+                  >
+                  <div class="col">
+                    <input type="password" class="form-control" id="password" />
+                  </div>
+                </div>
+                <button
+                  type="submit"
+                  class="btn btn-primary btn-kirim"
+                  onclick="validate()"
+                >
+                  Submit
+                </button>
+                <button
+                  class="btn btn-primary btn-loading d-none"
+                  type="button"
+                  disabled
+                >
+                  <span
+                    class="spinner-border spinner-border-sm"
+                    role="status"
+                    aria-hidden="true"
+                  ></span>
+                  Loading...
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Akhir Project -->
+    <svg
+      id="wave"
+      style="transform: rotate(0deg); transition: 0.3s"
+      viewBox="0 0 1440 100"
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      class="fixed-bottom"
+    >
+      <defs>
+        <linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0">
+          <stop stop-color="rgba(13, 110, 253, 1)" offset="0%"></stop>
+          <stop stop-color="rgba(13, 110, 253, 1)" offset="100%"></stop>
+        </linearGradient>
+      </defs>
+      <path
+        style="transform: translate(0, 0px); opacity: 1"
+        fill="url(#sw-gradient-0)"
+        d="M0,70L80,65C160,60,320,50,480,48.3C640,47,800,53,960,48.3C1120,43,1280,27,1440,18.3C1600,10,1760,10,1920,13.3C2080,17,2240,23,2400,30C2560,37,2720,43,2880,45C3040,47,3200,43,3360,48.3C3520,53,3680,67,3840,73.3C4000,80,4160,80,4320,75C4480,70,4640,60,4800,48.3C4960,37,5120,23,5280,21.7C5440,20,5600,30,5760,28.3C5920,27,6080,13,6240,8.3C6400,3,6560,7,6720,21.7C6880,37,7040,63,7200,76.7C7360,90,7520,90,7680,85C7840,80,8000,70,8160,63.3C8320,57,8480,53,8640,43.3C8800,33,8960,17,9120,15C9280,13,9440,27,9600,31.7C9760,37,9920,33,10080,30C10240,27,10400,23,10560,23.3C10720,23,10880,27,11040,28.3C11200,30,11360,30,11440,30L11520,30L11520,100L11440,100C11360,100,11200,100,11040,100C10880,100,10720,100,10560,100C10400,100,10240,100,10080,100C9920,100,9760,100,9600,100C9440,100,9280,100,9120,100C8960,100,8800,100,8640,100C8480,100,8320,100,8160,100C8000,100,7840,100,7680,100C7520,100,7360,100,7200,100C7040,100,6880,100,6720,100C6560,100,6400,100,6240,100C6080,100,5920,100,5760,100C5600,100,5440,100,5280,100C5120,100,4960,100,4800,100C4640,100,4480,100,4320,100C4160,100,4000,100,3840,100C3680,100,3520,100,3360,100C3200,100,3040,100,2880,100C2720,100,2560,100,2400,100C2240,100,2080,100,1920,100C1760,100,1600,100,1440,100C1280,100,1120,100,960,100C800,100,640,100,480,100C320,100,160,100,80,100L0,100Z"
+      ></path>
+    </svg>
+    <footer class="text-white text-center fixed-bottom pb-1">
+      <p>&copy; 2022 Kelurahan Semper Timur</p>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      const btnKirim = document.querySelector(".btn-kirim");
+      const btnLoading = document.querySelector(".btn-loading");
+
+      function validate() {
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+        var emailkapital = email.toUpperCase();
+        var emailbersih = emailkapital.replaceAll(" ", "");
+        btnLoading.classList.toggle("d-none");
+        btnKirim.classList.toggle("d-none");
+        if (email == "admin" && password == "admin") {
+          window.location = "./Tampil/index.html";
+          return false;
+        } else if (emailbersih == "KAMPUSA" && password == "12345") {
+          window.location = "./Data/kampusa.html";
+          return false;
+        } else if (emailbersih == "KAMPUSB" && password == "12345") {
+          window.location = "./Data/kampusb.html";
+          return false;
+        } else if (emailbersih == "SUNGAIINDAH" && password == "12345") {
+          window.location = "./Data/sungaiindah.html";
+          return false;
+        } else if (emailbersih == "CHEETAHA" && password == "12345") {
+          window.location = "./Data/cheetaha.html";
+          return false;
+        } else if (emailbersih == "CHEETAHB" && password == "12345") {
+          window.location = "./Data/cheetahb.html";
+          return false;
+        } else if (emailbersih == "HIU01" && password == "12345") {
+          window.location = "./Data/hiu01.html";
+          return false;
+        } else if (emailbersih == "ANGGREK02" && password == "12345") {
+          window.location = "./Data/anggrek02.html";
+          return false;
+        } else if (emailbersih == "GAYAMUDA08" && password == "12345") {
+          window.location = "./Data/gayamuda08.html";
+          return false;
+        } else if (emailbersih == "AIRFORCE09" && password == "12345") {
+          window.location = "./Data/airforce09.html";
+          return false;
+        } else if (emailbersih == "EAGLE4" && password == "12345") {
+          window.location = "./Data/eagle4.html";
+          return false;
+        } else if (emailbersih == "SIXTHSENSE" && password == "12345") {
+          window.location = "./Data/sixthsense.html";
+          return false;
+        } else if (emailbersih == "PANDAWA05" && password == "12345") {
+          window.location = "./Data/pandawa05.html";
+          return false;
+        } else if (emailbersih == "GARUDA7" && password == "12345") {
+          window.location = "./Data/garuda7.html";
+          return false;
+        } else if (emailbersih == "KASIM" && password == "12345") {
+          window.location = "./Data/kasim.html";
+          return false;
+        } else if (emailbersih == "LISTERANITASITORUS" && password == "12345") {
+          window.location = "./Data/listeranitasitorus.html";
+          return false;
+        } else if (emailbersih == "FRISKALUCIANAS" && password == "12345") {
+          window.location = "./Data/friskalucianas.html";
+          return false;
+        } else if (emailbersih == "ROHANAH" && password == "12345") {
+          window.location = "./Data/rohanah.html";
+          return false;
+        } else if (emailbersih == "TIAFEBBYYANTY" && password == "12345") {
+          window.location = "./Data/tiafebbyyanty.html";
+          return false;
+        } else if (emailbersih == "NOVIARIYANTO" && password == "12345") {
+          window.location = "./Data/noviariyanto.html";
+          return false;
+        } else if (emailbersih == "NOVIANTI" && password == "12345") {
+          window.location = "./Data/noviyanti.html";
+          return false;
+        } else if (emailbersih == "SAMSIASIMBOLON" && password == "12345") {
+          window.location = "./Data/samsiasimbolon.html";
+          return false;
+        } else if (emailbersih == "FERYHASTUNGKORO" && password == "12345") {
+          window.location = "./Data/feryhastungkoro.html";
+          return false;
+        } else if (emailbersih == "DIDINRAMDANI" && password == "12345") {
+          window.location = "./Data/didinramdani.html";
+          return false;
+        } else if (emailbersih == "ANDI" && password == "12345") {
+          window.location = "./Data/andi.html";
+          return false;
+        } else if (emailbersih == "ALHANJANI" && password == "12345") {
+          window.location = "./Data/alhanjani.html";
+          return false;
+        } else if (emailbersih == "MUHAMMADYUDA" && password == "12345") {
+          window.location = "./Data/muhammadyuda.html";
+          return false;
+        } else if (emailbersih == "IPUTUADITYAPUTRA" && password == "12345") {
+          window.location = "./Data/iputuadityaputra.html";
+          return false;
+        } else if (emailbersih == "SAMSIHARSIMAMORA" && password == "12345") {
+          window.location = "./Data/samsiharsimamora.html";
+          return false;
+        } else if (emailbersih == "SALSHAMEISKAL" && password == "12345") {
+          window.location = "./Data/salshameiskal.html";
+          return false;
+        } else if (emailbersih == "M.SURYANA" && password == "12345") {
+          window.location = "./Data/msuryana.html";
+          return false;
+        } else if (emailbersih == "ROHISAH" && password == "12345") {
+          window.location = "./Data/rohisah.html";
+          return false;
+        } else if (emailbersih == "MADIWAHYUDI" && password == "12345") {
+          window.location = "./Data/madiwahyudi.html";
+          return false;
+        } else if (emailbersih == "AMINAHARGIANI" && password == "12345") {
+          window.location = "./Data/aminahargiani.html";
+          return false;
+        } else if (emailbersih == "SITIKHODIJAH" && password == "12345") {
+          window.location = "./Data/sitikhodijah.html";
+          return false;
+        } else if (emailbersih == "ANISIHOMBING" && password == "12345") {
+          window.location = "./Data/anisihombing.html";
+          return false;
+        } else if (emailbersih == "AGUNGRAHMADI" && password == "12345") {
+          window.location = "./Data/agungrahmadi.html";
+          return false;
+        } else if (emailbersih == "AGNESYUDAPRASETIO" && password == "12345") {
+          window.location = "./Data/agnesyudaprasetio.html";
+          return false;
+        } else if (emailbersih == "ARIESSURYANSAH" && password == "12345") {
+          window.location = "./Data/ariessuryansah.html";
+          return false;
+        } else {
+          btnLoading.classList.toggle("d-none");
+          btnKirim.classList.toggle("d-none");
+          alert("Email atau password yang Anda masukkan salah!");
+          return false;
+        }
+      }
+    </script>
+  </body>
+</html>
