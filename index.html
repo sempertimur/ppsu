@@ -119,7 +119,7 @@
       function validate() {
         var email = document.getElementById("email").value;
         var password = document.getElementById("password").value;
-        var emailkapital = email.toUpperCase();
+        var emailkapital = email.toString().toUpperCase();
         var emailbersih = emailkapital.replaceAll(" ", "");
         btnLoading.classList.toggle("d-none");
         btnKirim.classList.toggle("d-none");

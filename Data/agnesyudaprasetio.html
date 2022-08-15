@@ -64,13 +64,15 @@
       //        alert(json.records);
            // masukkan data ke dalam tabel
             if (srchb!=''&&srcht!=''){
+              var j=1;
               for (var i = 0; i < json.records.length; i++) {
-                var saber = json.records[i].Saber.toUpperCase();
+                var saber = json.records[i].Saber.toString().toUpperCase();
                 var saberbersih = saber.replaceAll(" ","");
                 if(srchb==json.records[i].Bulan&&srcht==json.records[i].Tahun&&saberbersih=='AGNESYUDAPRASETIO'){
           tr = table.insertRow(-1);
           var tabCell = tr.insertCell(-1);
-          tabCell.innerHTML = "<div class='text-center pd-1'>"+(i+1)+"</div>";
+          tabCell.innerHTML = "<div class='text-center pd-1'>"+j+"</div>";
+          j=j+1;
           tabCell = tr.insertCell(-1);
           tabCell.innerHTML = "<div class='text-center pd-1'>"+json.records[i].Hari+"</div>";
           tabCell = tr.insertCell(-1);
